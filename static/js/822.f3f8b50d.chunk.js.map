@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/822.f3f8b50d.chunk.js","mappings":"2JAUA,UAVc,WACZ,OACE,2BACE,qCAEE,kBAAOA,KAAK","sources":["Pages/Login/Login.jsx"],"sourcesContent":["const Login = () => {\n  return (\n    <form>\n      <label>\n        mail\n        <input type=\"\" />\n      </label>\n    </form>\n  );\n};\nexport default Login;\n"],"names":["type"],"sourceRoot":""}
