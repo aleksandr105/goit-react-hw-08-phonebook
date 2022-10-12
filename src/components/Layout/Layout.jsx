@@ -1,30 +1,22 @@
 import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
-import { NaviBar, Container, NaviList, NaviLink } from './Layout.styled';
+import { NaviBar, Container } from './Layout.styled';
 import ClipLoader from 'react-spinners/ClipLoader';
+import { UserMenu } from 'components/UserMenu/UserMenu';
+import { NavMenu } from 'components/NavMeniu/NavMenu';
+import { useSelector } from 'react-redux';
+import { getIsLoggedIn } from 'redux/auth/auth-selectors';
+import { RegisterMenu } from '../RegisterMenu/RegisterMenu';
 
 export const Layout = () => {
+  const isLoggedIn = useSelector(getIsLoggedIn);
   return (
     <>
       <NaviBar>
         <Container>
-          <nav>
-            <NaviList>
-              <li>
-                <NaviLink to="//">Home</NaviLink>
-              </li>
-              <li>
-                <NaviLink to="/register">register</NaviLink>
-              </li>
-              <li>
-                <NaviLink to="/login">login</NaviLink>
-              </li>
-              <li>
-                <NaviLink to="/contacts">contacts</NaviLink>
-              </li>
-            </NaviList>
-          </nav>
+          <NavMenu />
         </Container>
+        <Container>{isLoggedIn ? <UserMenu /> : <RegisterMenu />}</Container>
       </NaviBar>
       <Suspense
         fallback={

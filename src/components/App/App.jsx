@@ -2,11 +2,11 @@ import { Routes, Route } from 'react-router-dom';
 import { Layout } from 'components/Layout/Layout';
 import { lazy } from 'react';
 
-const ContactsPage = lazy(() => import('Pages/ContactsPage/ContactsPage'));
-const Register = lazy(() => import('Pages/Register/Register'));
-const Login = lazy(() => import('Pages/Login/Login'));
-const Home = lazy(() => import('Pages/Home/Home'));
-const NotFound = lazy(() => import('Pages/NotFound/NotFound'));
+const ContactsPage = lazy(() => import('pages/ContactsPage/ContactsPage'));
+const Register = lazy(() => import('pages/Register/Register'));
+const Login = lazy(() => import('pages/Login/Login'));
+const Home = lazy(() => import('pages/Home/Home'));
+const NotFound = lazy(() => import('pages/NotFound/NotFound'));
 
 export const App = () => {
   return (

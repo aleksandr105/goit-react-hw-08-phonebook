@@ -1,6 +1,6 @@
 import { ButtonDelete, Item, ItemText, Number } from './ContactItem.styled';
 import PropTypes from 'prop-types';
-import { getIsLoading } from 'redux/selectors';
+import { getIsLoading } from 'redux/contactsOperations/selectors';
 import { useSelector } from 'react-redux';
 import { useState } from 'react';
 
@@ -18,12 +18,14 @@ export const ContactItem = ({ id, index, name, phone, deleteContact }) => {
           type="button"
           disabled={isLoading && id === disabledButton}
           onClick={() => {
+            console.log('click', id);
             setDisabledButton(id);
             return deleteContact(id);
           }}
         >
           Delete
         </ButtonDelete>
+        {id}
       </Item>
     </>
   );

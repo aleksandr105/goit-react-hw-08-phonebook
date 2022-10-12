@@ -1,21 +1,16 @@
 import styled from '@emotion/styled';
-import { NavLink } from 'react-router-dom';
 
 export const NaviBar = styled.header`
   top: 0;
   left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
   position: sticky;
   z-index: 1100;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   min-height: 64px;
-  padding-right: 24px;
-  padding-left: 24px;
-  padding-top: 12px;
-  padding-bottom: 12px;
   color: #fff;
-  /* background-color: #3f51b5; */
   background: rgb(13, 89, 185);
   background: linear-gradient(
     180deg,
@@ -27,26 +22,6 @@ export const NaviBar = styled.header`
 `;
 
 export const Container = styled.div`
-  padding-left: 10px;
-  padding-right: 10px;
-`;
-
-export const NaviList = styled.ul`
-  display: flex;
-  li:not(:last-child) {
-    margin-right: 40px;
-  }
-`;
-
-export const NaviLink = styled(NavLink)`
-  color: black;
-  font-weight: 600;
-  padding: 10px 40px;
-  border-radius: 5px;
-  background-color: #e8e9d8;
-
-  &.active {
-    background-color: tomato;
-    color: white;
-  }
+  padding-left: 7px;
+  padding-right: 7px;
 `;

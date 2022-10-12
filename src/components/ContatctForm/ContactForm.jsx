@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
-import { Formik, Form, Field, ErrorMessage } from 'formik';
-import { Label, ButtonAdd } from './ContactForm.styled';
+import { Formik, ErrorMessage } from 'formik';
+import { Label, ButtonAdd, Input, FormEl } from './ContactForm.styled';
 import * as yup from 'yup';
-import { getIsLoading } from 'redux/selectors';
+import { getIsLoading } from 'redux/contactsOperations/selectors';
 import { useSelector } from 'react-redux';
 
 let initialValues = {
@@ -29,49 +29,21 @@ export const ContactForm = ({ handleSubmit }) => {
       onSubmit={handleSubmit}
       validationSchema={schema}
     >
-      <Form
-        name="phonebook"
-        autoComplete="off"
-        style={{ border: '2px solid black', padding: '30px' }}
-      >
+      <FormEl name="phonebook" autoComplete="off">
         <Label htmlFor="">
           Name
-          <Field
-            placeholder="Rosie Simpson"
-            type="text"
-            name="name"
-            style={{
-              display: 'block',
-              width: '85%',
-              height: '25px',
-              marginBottom: '15px',
-              marginTop: '5px',
-              padding: '5px',
-            }}
-          />
+          <Input placeholder="Rosie Simpson" type="text" name="name" />
           <ErrorMessage name="name" component="p" />
         </Label>
         <Label htmlFor="">
           Number
-          <Field
-            placeholder="459-12-56"
-            type="tel"
-            name="number"
-            style={{
-              display: 'block',
-              width: '85%',
-              height: '25px',
-              marginBottom: '15px',
-              marginTop: '5px',
-              padding: '5px',
-            }}
-          />
+          <Input placeholder="459-12-56" type="tel" name="number" />
           <ErrorMessage name="number" component="p" />
         </Label>
         <ButtonAdd type="submit" disabled={isLoading}>
           Add contact
         </ButtonAdd>
-      </Form>
+      </FormEl>
     </Formik>
   );
 };

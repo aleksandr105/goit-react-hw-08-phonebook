@@ -8,15 +8,19 @@ import { useEffect } from 'react';
 import { ContactForm } from '../../components/ContatctForm/ContactForm';
 import { ContactList } from '../../components/ContactList/ContactList';
 import { Filter } from '../../components/Filter/Filter';
-import { writeFilter } from '../../redux/contactsSlice';
+import { writeFilter } from '../../redux/contactsOperations/contactsSlice';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchContacts, addContact, removeContact } from 'redux/operations';
+import {
+  fetchContacts,
+  addContact,
+  removeContact,
+} from 'redux/contactsOperations/operations';
 import {
   getContacts,
   getStatusFilter,
   getIsLoading,
   getError,
-} from 'redux/selectors';
+} from 'redux/contactsOperations/selectors';
 import ClipLoader from 'react-spinners/ClipLoader';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -74,6 +78,7 @@ const ContactsPage = () => {
   };
 
   const visibalFiltr = showFiltered();
+
   return (
     <section>
       <Container>

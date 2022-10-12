@@ -1,11 +1,6 @@
 import styled from '@emotion/styled';
 import { Form, Field } from 'formik';
 
-export const Label = styled.label`
-  display: block;
-  color: blue;
-`;
-
 export const ButtonAdd = styled.button`
   padding: 8px;
   background-color: #50ceff;
@@ -20,6 +15,11 @@ export const ButtonAdd = styled.button`
   }
 `;
 
+export const Label = styled.label`
+  display: block;
+  color: blue;
+`;
+
 export const Input = styled(Field)`
   display: block;
   width: 85%;
@@ -32,4 +32,13 @@ export const Input = styled(Field)`
 export const FormEl = styled(Form)`
   border: 2px solid black;
   padding: 30px;
+  max-width: 50%;
+  margin-left: 25%;
+  margin-top: 20px;
+`;
+
+export const RegisterTitle = styled.h3`
+  text-align: center;
+  font-size: 20px;
+  margin-top: 30px;
 `;

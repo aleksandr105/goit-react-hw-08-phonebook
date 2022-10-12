@@ -9,12 +9,12 @@ export const ContactList = ({ visibalFiltr, deleteContact }) => {
         .sort((firstName, secondName) =>
           firstName.name.localeCompare(secondName.name)
         )
-        .map(({ id, name, phone }, index) => (
+        .map(({ id, name, number }, index) => (
           <ContactItem
             key={id}
             id={id}
             name={name}
-            phone={phone}
+            phone={number}
             index={index}
             deleteContact={deleteContact}
           />
@@ -29,7 +29,7 @@ ContactList.propTypes = {
     PropTypes.shape({
       id: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
-      phone: PropTypes.string.isRequired,
+      number: PropTypes.string.isRequired,
     })
   ),
 };
