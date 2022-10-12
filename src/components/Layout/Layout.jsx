@@ -11,7 +11,7 @@ export const Layout = () => {
           <nav>
             <NaviList>
               <li>
-                <NaviLink to="/">Home</NaviLink>
+                <NaviLink to="//">Home</NaviLink>
               </li>
               <li>
                 <NaviLink to="/register">register</NaviLink>
