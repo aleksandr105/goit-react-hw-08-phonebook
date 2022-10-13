@@ -1,5 +1,4 @@
-import { LinkToHome } from './NotFound.stuled';
-import { Title } from './NotFound.stuled';
+import { LinkToHome, Title } from './NotFound.styled';
 
 const NotFound = () => {
   return (
