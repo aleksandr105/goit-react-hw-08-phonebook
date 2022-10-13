@@ -6,7 +6,7 @@ const ContactsPage = lazy(() => import('Pages/ContactsPage/ContactsPage'));
 const Register = lazy(() => import('Pages/Register/Register'));
 const Login = lazy(() => import('Pages/Login/Login'));
 const Home = lazy(() => import('Pages/Home/Home'));
-const NotFound = lazy(() => import('../../pages/NotFound/NotFound'));
+const NotFound = lazy(() => import('Pages/NotFound/NotFound'));
 
 export const App = () => {
   return (
