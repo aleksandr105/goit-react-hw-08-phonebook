@@ -18,14 +18,12 @@ export const ContactItem = ({ id, index, name, phone, deleteContact }) => {
           type="button"
           disabled={isLoading && id === disabledButton}
           onClick={() => {
-            console.log('click', id);
             setDisabledButton(id);
-            return deleteContact(id);
+            deleteContact(id);
           }}
         >
           Delete
         </ButtonDelete>
-        {id}
       </Item>
     </>
   );
