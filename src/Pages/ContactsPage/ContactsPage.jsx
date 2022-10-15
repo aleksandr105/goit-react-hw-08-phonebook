@@ -3,6 +3,7 @@ import {
   TitleLIstContacts,
   Titel,
   NoContactMessage,
+  SectionContacts,
 } from './ContactsPage.styled';
 import { useEffect } from 'react';
 import { ContactForm } from '../../components/ContatctForm/ContactForm';
@@ -80,7 +81,7 @@ const ContactsPage = () => {
   const visibalFiltr = showFiltered();
 
   return (
-    <section>
+    <SectionContacts>
       <Container>
         <ToastContainer />
         <Titel>Phonebook</Titel>
@@ -116,7 +117,7 @@ const ContactsPage = () => {
           </NoContactMessage>
         )}
       </Container>
-    </section>
+    </SectionContacts>
   );
 };
 

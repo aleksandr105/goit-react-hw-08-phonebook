@@ -11,7 +11,8 @@ export const NaviBar = styled.header`
   z-index: 1100;
   min-height: 64px;
   color: #fff;
-  background: rgb(13, 89, 185);
+  margin: 0px auto;
+
   background: linear-gradient(
     180deg,
     rgba(13, 89, 185, 1) 28%,
@@ -19,9 +20,24 @@ export const NaviBar = styled.header`
   );
   box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
     0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+
+  @media screen and (min-width: 760px) {
+    padding: 0px 80px;
+  }
+
+  @media screen and (max-width: 630px) {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  @media screen and (max-width: 760px) {
+    padding: 10px 7px;
+  }
 `;
 
 export const Container = styled.div`
   padding-left: 7px;
   padding-right: 7px;
+  max-width: 1000px;
+  margin: 0px auto;
 `;

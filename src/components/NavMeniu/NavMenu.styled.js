@@ -3,6 +3,9 @@ import { NavLink } from 'react-router-dom';
 
 export const NaviList = styled.ul`
   display: flex;
+  @media screen and (max-width: 630px) {
+    margin-bottom: 8px;
+  }
 
   li {
     display: flex;
@@ -17,9 +20,11 @@ export const NaviList = styled.ul`
 export const NaviLink = styled(NavLink)`
   color: black;
   font-weight: 600;
-  padding: 10px 40px;
+  padding: 10px 30px;
   border-radius: 5px;
-  background-color: #e8e9d8;
+  background-color: #50ceff;
+  width: 125px;
+  text-align: center;
 
   &.active {
     background-color: tomato;

@@ -1,5 +1,14 @@
 import styled from '@emotion/styled';
 import { Form, Field } from 'formik';
+import IMG from 'Photo/pile-of-mobile-phones-CBY5AF.jpg';
+
+export const SectionRegister = styled.section`
+  background-image: url(${IMG});
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 90vh;
+`;
 
 export const ButtonAdd = styled.button`
   padding: 8px;
@@ -22,7 +31,7 @@ export const Label = styled.label`
 
 export const Input = styled(Field)`
   display: block;
-  width: 85%;
+  width: 95%;
   height: 25px;
   margin-bottom: 15px;
   margin-top: 5px;
@@ -32,13 +41,20 @@ export const Input = styled(Field)`
 export const FormEl = styled(Form)`
   border: 2px solid black;
   padding: 30px;
-  max-width: 50%;
-  margin-left: 25%;
-  margin-top: 20px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: silver;
+  border-radius: 10px;
 `;
 
 export const RegisterTitle = styled.h3`
   text-align: center;
-  font-size: 20px;
-  margin-top: 30px;
+  font-size: 40px;
+  color: tomato;
+  font-weight: 900;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+  padding-top: 40px;
 `;

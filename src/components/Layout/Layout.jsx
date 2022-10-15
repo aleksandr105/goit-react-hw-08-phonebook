@@ -1,6 +1,6 @@
 import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
-import { NaviBar, Container } from './Layout.styled';
+import { NaviBar } from './Layout.styled';
 import ClipLoader from 'react-spinners/ClipLoader';
 import { UserMenu } from 'components/UserMenu/UserMenu';
 import { NavMenu } from 'components/NavMeniu/NavMenu';
@@ -13,10 +13,8 @@ export const Layout = () => {
   return (
     <>
       <NaviBar>
-        <Container>
-          <NavMenu />
-        </Container>
-        <Container>{isLoggedIn ? <UserMenu /> : <RegisterMenu />}</Container>
+        <NavMenu />
+        {isLoggedIn ? <UserMenu /> : <RegisterMenu />}
       </NaviBar>
       <Suspense
         fallback={
