@@ -31,5 +31,5 @@ export const Input = styled(Field)`
 
 export const FormEl = styled(Form)`
   border: 2px solid black;
-  padding: 30px;
+  padding: 10px;
 `;
