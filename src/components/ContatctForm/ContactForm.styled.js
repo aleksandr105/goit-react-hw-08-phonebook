@@ -23,8 +23,8 @@ export const ButtonAdd = styled.button`
 export const Input = styled(Field)`
   display: block;
   width: 85%;
-  height: 25px;
-  margin-bottom: 15px;
+  height: 20px;
+  margin-bottom: 10px;
   margin-top: 5px;
   padding: 5px;
 `;

@@ -4,8 +4,8 @@ export const FilterInput = styled.input`
   display: block;
   margin-top: 8px;
   width: 70%;
-  height: 25px;
-  margin-bottom: 15px;
+  height: 20px;
+  margin-bottom: 5px;
   padding: 5px;
 `;
 

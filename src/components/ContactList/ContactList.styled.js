@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
 export const List = styled.ul`
-  height: 300px;
+  height: calc(100vh - 415px);
   overflow-y: auto;
   overflow-x: hidden;
   li:not(:last-child) {
