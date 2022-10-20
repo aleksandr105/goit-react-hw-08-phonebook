@@ -83,7 +83,7 @@ const ContactsPage = () => {
   return (
     <SectionContacts>
       <Container>
-        <ToastContainer />
+        <ToastContainer style={{ paddingTop: '50px' }} />
         <Titel>Phonebook</Titel>
         <ContactForm handleSubmit={handleSubmit} />
         <TitleLIstContacts>Contacts</TitleLIstContacts>

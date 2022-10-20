@@ -7,18 +7,18 @@ export const SectionContacts = styled.section`
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+  padding: 50px 0px;
+  min-height: 92vh;
 `;
 
 export const Container = styled.div`
-  padding-top: 45px;
-  padding-left: 8px;
-  padding-right: 8px;
-  padding-bottom: 8px;
+  padding: 20px 8px;
   margin-left: auto;
   margin-right: auto;
   max-width: 420px;
   background-color: silver;
   opacity: 0.9;
+  border-radius: 15px;
 `;
 
 export const TitleLIstContacts = styled.h2`

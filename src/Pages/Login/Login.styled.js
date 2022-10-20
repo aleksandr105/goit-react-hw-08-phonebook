@@ -7,7 +7,7 @@ export const SectionLogin = styled.section`
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  height: 91vh;
+  min-height: 92vh;
 `;
 
 export const ButtonAdd = styled.button`

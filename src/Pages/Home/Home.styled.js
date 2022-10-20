@@ -1,13 +1,13 @@
 import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
-import IMG from '../../Photo/pile-of-mobile-phones-CBY5AF.jpg';
+import IMG from '../../Photo/smartphone-erreurs-pas-faire.jpg';
 
 export const HomeSection = styled.section`
   background-image: url(${IMG});
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  height: 91vh;
+  min-height: 92vh;
 `;
 
 export const MainTitle = styled.h1`

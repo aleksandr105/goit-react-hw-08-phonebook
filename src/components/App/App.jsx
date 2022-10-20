@@ -16,6 +16,7 @@ const NotFound = lazy(() => import('Pages/NotFound/NotFound'));
 
 export const App = () => {
   const dispatch = useDispatch();
+
   const isLoadingRefresh = useSelector(getLoadingRefresh);
 
   useEffect(() => {
@@ -37,7 +38,7 @@ export const App = () => {
           <Route
             path="login"
             element={
-              <PublicRoute restricted>
+              <PublicRoute restricted redirectTo="/">
                 <Login />
               </PublicRoute>
             }
@@ -45,7 +46,7 @@ export const App = () => {
           <Route
             path="register"
             element={
-              <PublicRoute restricted>
+              <PublicRoute restricted redirectTo="/">
                 <Register />
               </PublicRoute>
             }
@@ -53,7 +54,7 @@ export const App = () => {
           <Route
             path="contacts"
             element={
-              <PrivateRoute>
+              <PrivateRoute redirectTo="/">
                 <ContactsPage />
               </PrivateRoute>
             }
