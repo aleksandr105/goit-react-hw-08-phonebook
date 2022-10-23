@@ -10,7 +10,7 @@ import {
   MainTitleCottainer,
 } from './Home.styled';
 
-const Home = () => {
+const Home = ({ refHeader }) => {
   const IsLoggedIn = useSelector(getIsLoggedIn);
   const { name } = useSelector(getUserName);
 
@@ -29,7 +29,7 @@ const Home = () => {
 
   return (
     <main>
-      <HomeSection>
+      <HomeSection refHeader={refHeader.current.getBoundingClientRect().height}>
         <Container>
           <MainTitle>
             <MainTitleCottainer>Welcome to Phone book</MainTitleCottainer>

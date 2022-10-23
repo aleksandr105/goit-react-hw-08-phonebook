@@ -96,7 +96,7 @@ const ContactsPage = ({ refHeader }) => {
   const visibalFiltr = showFiltered();
 
   return (
-    <SectionContacts>
+    <SectionContacts headerHeight={headerHeight}>
       <Container headerHeight={headerHeight} ref={containerHeight}>
         <ToastContainer style={{ paddingTop: '50px' }} />
         <Titel>Phonebook</Titel>

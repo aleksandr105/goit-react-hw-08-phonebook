@@ -9,7 +9,7 @@ export const SectionContacts = styled.section`
   padding-top: 1vh;
   padding-left: 8px;
   padding-right: 8px;
-  min-height: 100vh;
+  min-height: calc(100vh - ${props => props.headerHeight}px);
 `;
 
 export const Container = styled.div`

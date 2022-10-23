@@ -7,7 +7,7 @@ export const SectionLogin = styled.section`
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  min-height: 100vh;
+  min-height: calc(100vh - ${props => props.refHeader}px);
 `;
 
 export const ButtonAdd = styled.button`
@@ -55,6 +55,6 @@ export const RegisterTitle = styled.h3`
   font-weight: 900;
   display: flex;
   justify-content: center;
-  margin-bottom: 100px;
-  padding-top: 80px;
+  margin-bottom: 50px;
+  padding-top: 40px;
 `;

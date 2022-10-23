@@ -33,7 +33,7 @@ export const App = () => {
             index
             element={
               <PublicRoute>
-                <Home />
+                <Home refHeader={refHeader} />
               </PublicRoute>
             }
           />
@@ -41,7 +41,7 @@ export const App = () => {
             path="login"
             element={
               <PublicRoute restricted redirectTo="/contacts">
-                <Login />
+                <Login refHeader={refHeader} />
               </PublicRoute>
             }
           />
@@ -49,7 +49,7 @@ export const App = () => {
             path="register"
             element={
               <PublicRoute restricted redirectTo="/contacts">
-                <Register />
+                <Register refHeader={refHeader} />
               </PublicRoute>
             }
           />

@@ -7,7 +7,6 @@ export const ContactList = ({
   deleteContact,
   containerHeight,
 }) => {
-  console.log(containerHeight);
   return (
     <List contactsHeight={containerHeight}>
       {visibalFiltr

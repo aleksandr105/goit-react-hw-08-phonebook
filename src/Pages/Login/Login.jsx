@@ -12,7 +12,7 @@ import { login } from 'redux/auth/auth-operations';
 import { Container } from 'components/Layout/Layout.styled';
 import { MainTitleCottainer } from 'Pages/Home/Home.styled';
 
-const Login = () => {
+const Login = ({ refHeader }) => {
   const dispatch = useDispatch();
 
   const handleSubmit = ({ email, password }, { resetForm }) => {
@@ -21,7 +21,7 @@ const Login = () => {
   };
 
   return (
-    <SectionLogin>
+    <SectionLogin refHeader={refHeader.current.getBoundingClientRect().height}>
       <Container>
         <RegisterTitle>
           <MainTitleCottainer>Log in to use the phone book</MainTitleCottainer>

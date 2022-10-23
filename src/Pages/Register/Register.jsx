@@ -14,7 +14,7 @@ import { MainTitleCottainer } from 'Pages/Home/Home.styled';
 
 const initialValues = { name: '', email: '', password: '' };
 
-const Register = () => {
+const Register = ({ refHeader }) => {
   const dispach = useDispatch();
 
   const handleSubmit = ({ name, email, password }, { resetForm }) => {
@@ -23,7 +23,9 @@ const Register = () => {
   };
 
   return (
-    <SectionRegister>
+    <SectionRegister
+      refHeader={refHeader.current.getBoundingClientRect().height}
+    >
       <Container>
         <RegisterTitle>
           <MainTitleCottainer>

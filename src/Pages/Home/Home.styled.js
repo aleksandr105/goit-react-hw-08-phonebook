@@ -7,7 +7,7 @@ export const HomeSection = styled.section`
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  min-height: 100vh;
+  min-height: calc(100vh - ${props => props.refHeader}px);
 `;
 
 export const MainTitle = styled.h1`
