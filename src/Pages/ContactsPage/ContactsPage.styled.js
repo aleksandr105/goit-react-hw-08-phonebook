@@ -20,7 +20,7 @@ export const Container = styled.div`
   background-color: silver;
   opacity: 0.9;
   border-radius: 15px;
-  height: calc(98vh - ${props => props.headerHeight}px);
+  height: calc(92vh - ${props => props.headerHeight}px);
 `;
 
 export const TitleLIstContacts = styled.h2`
