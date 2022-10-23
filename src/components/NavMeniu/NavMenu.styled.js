@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 export const NaviList = styled.ul`
   display: flex;
-  @media screen and (max-width: 630px) {
+  @media screen and (max-width: 680px) {
     margin-bottom: 8px;
   }
 

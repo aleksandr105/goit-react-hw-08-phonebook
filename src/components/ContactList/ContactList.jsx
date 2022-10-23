@@ -2,9 +2,14 @@ import { List } from './ContactList.styled';
 import PropTypes from 'prop-types';
 import { ContactItem } from 'components/ContactItem/ContactItem';
 
-export const ContactList = ({ visibalFiltr, deleteContact }) => {
+export const ContactList = ({
+  visibalFiltr,
+  deleteContact,
+  containerHeight,
+}) => {
+  console.log(containerHeight);
   return (
-    <List>
+    <List contactsHeight={containerHeight}>
       {visibalFiltr
         .sort((firstName, secondName) =>
           firstName.name.localeCompare(secondName.name)

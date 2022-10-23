@@ -1,4 +1,4 @@
-import { Suspense } from 'react';
+import { Suspense, forwardRef } from 'react';
 import { Outlet } from 'react-router-dom';
 import { NaviBar } from './Layout.styled';
 import ClipLoader from 'react-spinners/ClipLoader';
@@ -8,11 +8,12 @@ import { useSelector } from 'react-redux';
 import { getIsLoggedIn } from 'redux/auth/auth-selectors';
 import { RegisterMenu } from '../RegisterMenu/RegisterMenu';
 
-export const Layout = () => {
+export const Layout = forwardRef((props, ref) => {
   const isLoggedIn = useSelector(getIsLoggedIn);
+
   return (
     <>
-      <NaviBar>
+      <NaviBar ref={ref}>
         <NavMenu />
         {isLoggedIn ? <UserMenu /> : <RegisterMenu />}
       </NaviBar>
@@ -27,4 +28,4 @@ export const Layout = () => {
       </Suspense>
     </>
   );
-};
+});

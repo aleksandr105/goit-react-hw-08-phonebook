@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import { Layout } from 'components/Layout/Layout';
 import { lazy } from 'react';
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { fetchCurrentUser } from 'redux/auth/auth-operations';
 import { useDispatch, useSelector } from 'react-redux';
 import { PrivateRoute } from 'components/PrivateRoute/PrivateRoute';
@@ -19,6 +19,8 @@ export const App = () => {
 
   const isLoadingRefresh = useSelector(getLoadingRefresh);
 
+  const refHeader = useRef();
+
   useEffect(() => {
     dispatch(fetchCurrentUser());
   }, [dispatch]);
@@ -26,7 +28,7 @@ export const App = () => {
   return (
     !isLoadingRefresh && (
       <Routes>
-        <Route path="/" element={<Layout />}>
+        <Route path="/" element={<Layout ref={refHeader} />}>
           <Route
             index
             element={
@@ -55,7 +57,7 @@ export const App = () => {
             path="contacts"
             element={
               <PrivateRoute redirectTo="/login">
-                <ContactsPage />
+                <ContactsPage refHeader={refHeader} />
               </PrivateRoute>
             }
           />

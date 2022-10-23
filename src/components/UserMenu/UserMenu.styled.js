@@ -8,7 +8,7 @@ export const ButtonLogout = styled.button`
   background-color: #50ceff;
   font-size: 15px;
   border: none;
-  @media screen and (min-width: 630px) {
+  @media screen and (min-width: 681px) {
     margin-left: 15px;
   }
 `;
@@ -16,7 +16,7 @@ export const ButtonLogout = styled.button`
 export const UserMenuContainer = styled.div`
   display: flex;
   align-items: center;
-  @media screen and (max-width: 630px) {
+  @media screen and (max-width: 680px) {
     flex-direction: column-reverse;
   }
 `;
@@ -24,10 +24,10 @@ export const UserMenuContainer = styled.div`
 export const UserMenuText = styled.p`
   color: black;
   font-weight: 600;
-  @media screen and (max-width: 840px) and (min-width: 630px) {
-    width: 160px;
+  @media screen and (max-width: 920px) and (min-width: 681px) {
+    width: 240px;
   }
-  @media screen and (max-width: 630px) {
+  @media screen and (max-width: 680px) {
     margin-top: 10px;
   }
 `;

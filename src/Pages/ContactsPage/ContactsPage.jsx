@@ -5,7 +5,7 @@ import {
   NoContactMessage,
   SectionContacts,
 } from './ContactsPage.styled';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { ContactForm } from '../../components/ContatctForm/ContactForm';
 import { ContactList } from '../../components/ContactList/ContactList';
 import { Filter } from '../../components/Filter/Filter';
@@ -25,17 +25,32 @@ import {
 import ClipLoader from 'react-spinners/ClipLoader';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useRef } from 'react';
 
-const ContactsPage = () => {
+const ContactsPage = ({ refHeader }) => {
   const filter = useSelector(getStatusFilter);
   const contacts = useSelector(getContacts);
   const isLoading = useSelector(getIsLoading);
   const error = useSelector(getError);
   const dispatch = useDispatch();
 
+  const containerHeight = useRef();
+
+  const [headerHeight, setHeaderHeight] = useState(null);
+  const [contactsHeight, setContactsHeight] = useState(null);
+
   useEffect(() => {
     dispatch(fetchContacts());
   }, [dispatch]);
+
+  useEffect(() => {
+    const heightHeader = refHeader.current.getBoundingClientRect().height;
+    setHeaderHeight(heightHeader);
+
+    const heightContainer =
+      containerHeight.current.getBoundingClientRect().height;
+    setContactsHeight(Math.round(heightContainer));
+  }, [refHeader, contactsHeight]);
 
   const handleSubmit = ({ name, number }, { resetForm }) => {
     const contactСheck = contacts.find(
@@ -82,7 +97,7 @@ const ContactsPage = () => {
 
   return (
     <SectionContacts>
-      <Container>
+      <Container headerHeight={headerHeight} ref={containerHeight}>
         <ToastContainer style={{ paddingTop: '50px' }} />
         <Titel>Phonebook</Titel>
         <ContactForm handleSubmit={handleSubmit} />
@@ -101,6 +116,7 @@ const ContactsPage = () => {
             <ContactList
               visibalFiltr={visibalFiltr}
               deleteContact={deleteContact}
+              containerHeight={contactsHeight}
             />
           </>
         ) : (
