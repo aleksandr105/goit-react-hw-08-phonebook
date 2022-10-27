@@ -10,24 +10,21 @@ export const Options = ({
   togleOptionsShow,
   togleModal,
   id,
+  optionBtnRef,
 }) => {
   const refOptions = useRef();
 
   useEffect(() => {
     const closedOptions = e => {
-      if (refOptions.current !== e.target) {
-        console.log('dadadad');
-        // togleOptionsShow();
-      }
+      if (refOptions.current !== e.target && optionBtnRef.current !== e.target)
+        togleOptionsShow();
     };
 
     window.addEventListener('click', closedOptions);
-    console.log('subskribel');
     return () => {
       window.removeEventListener('click', closedOptions);
-      console.log('clear');
     };
-  }, []);
+  }, [optionBtnRef, togleOptionsShow]);
 
   return (
     <OptionsBtnContainer ref={refOptions}>

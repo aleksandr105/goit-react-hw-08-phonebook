@@ -1,6 +1,6 @@
 import { Item, ItemText, Number, OptionsBtn } from './ContactItem.styled';
 import PropTypes from 'prop-types';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { Modal } from 'components/Modal/Modal';
 import { Options } from 'components/Options/Options';
 
@@ -16,6 +16,7 @@ export const ContactItem = ({
   const number = phone.replaceAll('-', '');
   const [openModal, setOpenModal] = useState(false);
   const [moreOptions, setMoreOptions] = useState(false);
+  const optionBtnRef = useRef();
 
   const togleModal = () => setOpenModal(prev => !prev);
   const togleOptionsShow = () => {
@@ -28,7 +29,11 @@ export const ContactItem = ({
       <Item>
         {index + 1}.<ItemText>{name}:</ItemText>
         <Number href={`tel:${number}`}>{phone}</Number>
-        <OptionsBtn onClick={togleOptionsShow} disabled={disabledOptionsStatus}>
+        <OptionsBtn
+          onClick={togleOptionsShow}
+          disabled={disabledOptionsStatus}
+          ref={optionBtnRef}
+        >
           options
         </OptionsBtn>
         {moreOptions && (
@@ -37,6 +42,7 @@ export const ContactItem = ({
             deleteContact={deleteContact}
             togleOptionsShow={togleOptionsShow}
             id={id}
+            optionBtnRef={optionBtnRef}
           />
         )}
         {openModal && (
