@@ -1,29 +1,47 @@
-import { ButtonDelete, Item, ItemText, Number } from './ContactItem.styled';
+import { Item, ItemText, Number, OptionsBtn } from './ContactItem.styled';
 import PropTypes from 'prop-types';
-import { getIsLoading } from 'redux/contactsOperations/selectors';
-import { useSelector } from 'react-redux';
 import { useState } from 'react';
+import { Modal } from 'components/Modal/Modal';
+import { Options } from 'components/Options/Options';
 
-export const ContactItem = ({ id, index, name, phone, deleteContact }) => {
-  const isLoading = useSelector(getIsLoading);
+export const ContactItem = ({
+  id,
+  index,
+  name,
+  phone,
+  deleteContact,
+  onDisabledOptions,
+  disabledOptionsStatus,
+}) => {
   const number = phone.replaceAll('-', '');
-  const [disabledButton, setDisabledButton] = useState(null);
+  const [openModal, setOpenModal] = useState(false);
+  const [moreOptions, setMoreOptions] = useState(false);
+
+  const togleModal = () => setOpenModal(prev => !prev);
+  const togleOptionsShow = () => {
+    setMoreOptions(prev => !prev);
+    onDisabledOptions(prev => !prev);
+  };
 
   return (
     <>
       <Item>
         {index + 1}.<ItemText>{name}:</ItemText>
         <Number href={`tel:${number}`}>{phone}</Number>
-        <ButtonDelete
-          type="button"
-          disabled={isLoading && id === disabledButton}
-          onClick={() => {
-            setDisabledButton(id);
-            deleteContact(id);
-          }}
-        >
-          Delete
-        </ButtonDelete>
+        <OptionsBtn onClick={togleOptionsShow} disabled={disabledOptionsStatus}>
+          options
+        </OptionsBtn>
+        {moreOptions && (
+          <Options
+            togleModal={togleModal}
+            deleteContact={deleteContact}
+            togleOptionsShow={togleOptionsShow}
+            id={id}
+          />
+        )}
+        {openModal && (
+          <Modal closeModal={togleModal} name={name} phone={number} id={id} />
+        )}
       </Item>
     </>
   );

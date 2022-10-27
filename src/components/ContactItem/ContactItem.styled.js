@@ -5,6 +5,8 @@ export const Item = styled.li`
   display: flex;
   font-weight: 600;
   align-items: center;
+  padding-right: 3px;
+  position: relative;
 `;
 
 export const ItemText = styled.span`
@@ -24,21 +26,21 @@ export const Number = styled.a`
   }
 `;
 
-export const ButtonDelete = styled.button`
-  margin-left: 10px;
+export const OptionsBtn = styled.button`
   padding: 2px;
   background-color: #50ceff;
   border-radius: 5px;
   border: none;
-  width: 50px;
-  height: 20px;
+  height: 25px;
   font-weight: 600;
   transition-duration: 130ms;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-left: 4px;
+
   :hover {
     color: red;
-    transform: scale(1.1);
+    transform: scale(1.05);
   }
 `;

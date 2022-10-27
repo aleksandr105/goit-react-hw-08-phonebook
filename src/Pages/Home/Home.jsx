@@ -29,7 +29,9 @@ const Home = ({ refHeader }) => {
 
   return (
     <main>
-      <HomeSection refHeader={refHeader.current.getBoundingClientRect().height}>
+      <HomeSection
+        refHeader={refHeader.current?.getBoundingClientRect().height}
+      >
         <Container>
           <MainTitle>
             <MainTitleCottainer>Welcome to Phone book</MainTitleCottainer>

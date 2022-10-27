@@ -4,6 +4,7 @@ import { Label, ButtonAdd, Input, FormEl } from './ContactForm.styled';
 import * as yup from 'yup';
 import { getIsLoading } from 'redux/contactsOperations/selectors';
 import { useSelector } from 'react-redux';
+import { FcCellPhone, FcBusinessman } from 'react-icons/fc';
 
 let initialValues = {
   name: '',
@@ -31,13 +32,25 @@ export const ContactForm = ({ handleSubmit }) => {
     >
       <FormEl name="phonebook" autoComplete="off">
         <Label htmlFor="">
-          Name
-          <Input placeholder="Rosie Simpson" type="text" name="name" />
+          <span style={{ display: 'block' }}>Name</span>
+          <span style={{ position: 'relative' }}>
+            <FcBusinessman
+              style={{ position: 'absolute', left: '0' }}
+              size={20}
+            />
+            <Input placeholder="Rosie Simpson" type="text" name="name" />
+          </span>
           <ErrorMessage name="name" component="p" />
         </Label>
         <Label htmlFor="">
-          Number
-          <Input placeholder="459-12-56" type="tel" name="number" />
+          <span style={{ display: 'block' }}>Number</span>
+          <span style={{ position: 'relative' }}>
+            <FcCellPhone
+              style={{ position: 'absolute', left: '0' }}
+              size={20}
+            />
+            <Input placeholder="459-12-56" type="tel" name="number" />
+          </span>
           <ErrorMessage name="number" component="p" />
         </Label>
         <ButtonAdd type="submit" disabled={isLoading}>

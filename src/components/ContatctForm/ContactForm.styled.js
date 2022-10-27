@@ -26,10 +26,12 @@ export const Input = styled(Field)`
   height: 20px;
   margin-bottom: 10px;
   margin-top: 5px;
-  padding: 5px;
+  padding: 5px 5px 5px 22px;
+  border-radius: 5px;
 `;
 
 export const FormEl = styled(Form)`
   border: 2px solid black;
   padding: 10px;
+  border-radius: 10px;
 `;

@@ -13,6 +13,7 @@ export const SectionContacts = styled.section`
 `;
 
 export const Container = styled.div`
+  position: relative;
   padding: 5px 5px;
   margin-left: auto;
   margin-right: auto;

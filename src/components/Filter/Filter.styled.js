@@ -6,7 +6,8 @@ export const FilterInput = styled.input`
   width: 70%;
   height: 20px;
   margin-bottom: 5px;
-  padding: 5px;
+  padding: 5px 5px 5px 25px;
+  border-radius: 5px;
 `;
 
 export const FilterLabel = styled.label`

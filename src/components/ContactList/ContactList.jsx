@@ -1,12 +1,15 @@
 import { List } from './ContactList.styled';
 import PropTypes from 'prop-types';
 import { ContactItem } from 'components/ContactItem/ContactItem';
+import { useState } from 'react';
 
 export const ContactList = ({
   visibalFiltr,
   deleteContact,
   containerHeight,
 }) => {
+  const [disabledOptions, setDisabledOptions] = useState(false);
+
   return (
     <List contactsHeight={containerHeight}>
       {visibalFiltr
@@ -21,6 +24,8 @@ export const ContactList = ({
             phone={number}
             index={index}
             deleteContact={deleteContact}
+            onDisabledOptions={setDisabledOptions}
+            disabledOptionsStatus={disabledOptions}
           />
         ))}
     </List>

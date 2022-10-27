@@ -36,6 +36,7 @@ export const Input = styled(Field)`
   margin-bottom: 15px;
   margin-top: 5px;
   padding: 5px;
+  border-radius: 5px;
 `;
 
 export const FormEl = styled(Form)`

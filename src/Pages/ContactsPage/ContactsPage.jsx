@@ -102,7 +102,13 @@ const ContactsPage = ({ refHeader }) => {
         <Titel>Phonebook</Titel>
         <ContactForm handleSubmit={handleSubmit} />
         <TitleLIstContacts>Contacts</TitleLIstContacts>
-        <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <div
+          style={{
+            position: 'absolute',
+            right: 210,
+            top: 250,
+          }}
+        >
           <ClipLoader
             color={'#d63636'}
             loading={isLoading && contacts.length !== 0}
