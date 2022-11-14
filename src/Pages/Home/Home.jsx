@@ -30,7 +30,7 @@ const Home = ({ refHeader }) => {
   return (
     <main>
       <HomeSection
-        refHeader={refHeader.current?.getBoundingClientRect().height}
+        refHeader={refHeader.current?.getBoundingClientRect().height && 64}
       >
         <Container>
           <MainTitle>
